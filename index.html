@@ -5,262 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Calendar GIF</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="/style.css">
 </head>
 <style>
-    body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    /* padding: 20px; */
-}
 
-.carousel-inner {
-        margin: 0;
-        height: 100vh;
-
-    }
-    @media (max-width: 768px) {
-    video {
-        width: 100vw; 
-    }
-}
-
-.container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-}
-
-.calendar {
-    position: relative;
-}
-
-.calendar-gif {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.calendar-grid {
-    position: absolute;
-    top: 30%;
-    left: 8%;
-    width: 85%;
-    height: 60%;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    pointer-events: none;
-}
-
-.day {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid transparent;
-    transition: background 0.3s, border 0.3s;
-    pointer-events: auto; 
-    opacity: 0;
-}
-
-.day:hover {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid #007bff;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#reminderList {
-    margin-top: 20px;
-}
 </style>
 <body>
-    <div class="">
+    <div class="position-relative">
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
-                    <video autoplay muted playsinline loop>
-                        <source src="./assets/1.mp4"  type="video/mp4" />
-                    </video>
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="/assets/1.mp4"  type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="0">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/2.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-0" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="1">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/3.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-1" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="2">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/4.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-2" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="3">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/5.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-3" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="4">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/6.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-4" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="5">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/7.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-5" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="6">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/8.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-6" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="7">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/9.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-7" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="8">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/10.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-8" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="9">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/11.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-9" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="10">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/12.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-10" class="calendar-grid"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" id="11">
+                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="calendar">
+                        <video autoplay muted playsinline loop class="calendar-gif">
+                            <source src="./assets/13.mp4"  type="video/mp4" />
+                        </video>
+                        <div id="calendar-11" class="calendar-grid"></div>
+                    </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
                     <div class="calendar">
                         <video autoplay muted playsinline loop class="calendar-gif">
-                            <source src="./assets/2.mp4"  type="video/mp4" />
+                            <source src="./assets/end.mp4"  type="video/mp4" />
                         </video>
-                        <div id="calendar" class="calendar-grid"></div>
                     </div>
                 </div>
               </div>
-              <div class="carousel-item">
-                <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
-                    <video autoplay muted playsinline loop>
-                        <source src="./assets/3.mp4"  type="video/mp4" />
-                    </video>
-                </div>
-              </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <!-- <div class="position-relative"></div> -->
+            <button class="carousel-control-prev" onclick="slideBtn(false)"  type="button"  data-bs-target="#carouselExample" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <button class="carousel-control-next" onclick="slideBtn(true)" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-  
-        <!-- <div id="reminderModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Set Reminder for <span id="selectedDate"></span></h2>
-                <input type="text" id="reminderText" placeholder="Reminder text" required>
-                <input type="url" id="reminderMedia" placeholder="Image/Video URL" required>
-                <button id="setReminder">Set Reminder</button>
+          <div id="calendarToast" class="toast align-items-center position-absolute" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
-        <div id="reminderList"></div>
-        <div id="calendar"></div> -->
     </div>
     <script>
-//         const daysInMonth = {
-//             January: 31,
-//             February: 28, 
-//             March: 31,
-//             April: 30,
-//             May: 31,
-//             June: 30,
-//             July: 31,
-//             August: 31,
-//             September: 30,
-//             October: 31,
-//             November: 30,
-//             December: 31
-//         };
 
-//         console.log(daysInMonth, 'daysInMonth')
+    let mm
+    let y = 2025;
+    let days = 0;
     
-//         function isLeapYear(year) {
-//         return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
-//     }
-    
-//     function getDaysInMonth(month, year) {
-//         if (month === 'February' && isLeapYear(year)) {
-//             return 29;
-//         }
-//         return daysInMonth[month];
-//     }
-//     function generateCalendar(month, year) {
-//         const days = getDaysInMonth(month, year);
-//         const calendar = [];
-//     console.log(days, 'days days')
-//         for (let day = 1; day <= days; day++) {
-//             calendar.push(day);
-//         }
-    
-//         return calendar;
-//     }
-    
-//     // Example usage:
-//     const month = 'November';
-//     const year = 2024; // Leap year
-//     const calendar = generateCalendar(month, year);
-//     console.log(calendar); // Outputs: [1, 2, 3, ..., 29]
+    // Listen for the slide event to detect direction and trigger your function
+    document.getElementById('carouselExample').addEventListener('slide.bs.carousel', function (event) {
+        const direction = event.from < event.to ? 'next' : 'prev';
+        // Call your custom function with the direction and target slide index
 
-//     function displayCalendar(month, year) {
-//     const calendarDiv = document.getElementById('calendar');
-//     const days = generateCalendar(month, year);
-//     calendarDiv.innerHTML = ''; // Clear previous content
+        onSlideChange(event.to, direction);
+    });
 
-//     days.forEach(day => {
-//         const dayElement = document.createElement('div');
-//         dayElement.textContent = day;
-//         dayElement.className = 'day'; // Add a class for styling
-//         calendarDiv.appendChild(dayElement);
-//     });
-// }
+    function onSlideChange(currentSlideIndex, direction) {
+        mm = currentSlideIndex - 1
+        displayCalendar(mm, y);
+         days = getDaysInMonth(mm, y);
+        // Add more actions based on the slide index or direction if needed
+    }
 
-// // Example usage:
-// displayCalendar('November', 2024);
-
-
-// batas
-
-// function getDayOfWeek(date) {
-//     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-//     // data.push({...data, day: daysOfWeek[date.getDay()]})
-//     return daysOfWeek[date.getDay()]; // Get the day of the week
-// }
-
-// function processDays(year) {
-//     const data = []
-//     const month = 10; // November (0-indexed)
-//     const daysInNovember = [];
-
-//     // Loop through all days in November
-//     for (let day = 1; day <= 30; day++) {
-//         const date = new Date(year, month, day);
-//         const dayOfWeek = getDayOfWeek(date);
-
-//         console.log(date, dayOfWeek, 'dayyy')
-//         daysInNovember.push(`${date.toISOString().split('T')[0]} (${dayOfWeek})`);
-//         data.push({
-//         day: dayOfWeek,
-//         date: date.getDate(),
-//         month: date.getMonth() + 1, // Month is zero-indexed
-//         year: date.getFullYear()
-//     });
-// }
-// console.log(data, 'data')
-    
-//     return daysInNovember;
-// }
 const daysInMonth = {
             0: 31,
             1: 28, 
@@ -276,9 +207,8 @@ const daysInMonth = {
             11: 31
         };
 
-        console.log(daysInMonth, 'daysInMonth')
     
-        function isLeapYear(year) {
+    function isLeapYear(year) {
         return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
     }
     
@@ -288,13 +218,13 @@ const daysInMonth = {
         }
         return daysInMonth[month];
     }
-    const y = 2025;
-    const mm = 0
-    const days = getDaysInMonth(mm, y);
-    console.log(days, 'ooooooo')
+    let monthCounter = -1
 
+    function slideBtn(isNext) {
 
-    async function fetchHolidays(year) {
+}
+
+async function fetchHolidays(year) {
     const response = await fetch(`https://api-harilibur.netlify.app/api?year=2024`);
     const holidays = await response.json();
     return holidays;
@@ -302,7 +232,7 @@ const daysInMonth = {
 
 // Example usage:
 fetchHolidays(y).then(holidays => {
-    console.log(holidays, 'holidays'); // Outputs the list of holidays for the year 2024
+    // console.log(holidays, 'holidays');
 });
 function getDayOfWeek(date) {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -314,36 +244,16 @@ function getDaysInPreviousMonth(year, month) {
 }
 
 function processDays(year) {
-    const month = mm; // November (0-indexed)
-    const daysInNovember = [];
+    const month = mm; // Current month from the slider
     const data = [];
 
-    // Loop through all days in November
+    // Main days of the month
     for (let day = 1; day <= days; day++) {
         const date = new Date(year, month, day);
         const dayOfWeek = getDayOfWeek(date);
 
-        daysInNovember.push(`${date.toISOString().split('T')[0]} (${dayOfWeek})`);
         data.push({
             timeStamp: date,
-
-            day: dayOfWeek,
-            date: date.getDate(),
-            month: date.getMonth() + 1, // Month is zero-indexed
-            year: date.getFullYear()
-        });
-    }
-
-    // Ensure data starts on Monday by adding days from October if needed
-    const firstDayIndex = new Date(year, month, 1).getDay();
-    const previousMonthDays = getDaysInPreviousMonth(year, month);
-    let daysToAddAtStart = (firstDayIndex === 0 ? 6 : firstDayIndex - 1); // Number of days to backfill
-    for (let i = 0; i < daysToAddAtStart; i++) {
-        const date = new Date(year, month - 1, previousMonthDays - i);
-        const dayOfWeek = getDayOfWeek(date);
-        data.unshift({
-            timeStamp: date,
-
             day: dayOfWeek,
             date: date.getDate(),
             month: date.getMonth() + 1,
@@ -351,15 +261,33 @@ function processDays(year) {
         });
     }
 
-    // Ensure data ends on Sunday by adding days from December if needed
+    // Fill the start of the month grid
+    const firstDayIndex = new Date(year, month, 1).getDay();
+    const previousMonthDays = getDaysInPreviousMonth(year, month);
+    let daysToAddAtStart = (firstDayIndex === 0 ? 6 : firstDayIndex - 1);
+    for (let i = 0; i < daysToAddAtStart; i++) {
+        const date = new Date(year, month - 1, previousMonthDays - i);
+        const dayOfWeek = getDayOfWeek(date);
+        data.unshift({
+            timeStamp: date,
+            day: dayOfWeek,
+            date: date.getDate(),
+            month: date.getMonth() + 1,
+            year: date.getFullYear()
+        });
+    }
+
+    // Fill the end of the month grid
     const lastDayIndex = new Date(year, month, days).getDay();
     let daysToAddAtEnd = (lastDayIndex === 6 ? 0 : 6 - lastDayIndex);
     for (let i = 1; i <= daysToAddAtEnd; i++) {
         const date = new Date(year, month + 1, i);
         const dayOfWeek = getDayOfWeek(date);
-        if (data.length <= days) {
+
+        // Check for duplicates
+        if (!data.some(d => d.date === date.getDate() && d.month === date.getMonth() + 1 && d.year === date.getFullYear())) {
             data.push({
-            timeStamp: date,
+                timeStamp: date,
                 day: dayOfWeek,
                 date: date.getDate(),
                 month: date.getMonth() + 1,
@@ -368,33 +296,35 @@ function processDays(year) {
         }
     }
 
-    // Fill to exactly 42 entries
-    let start = 1; // Start from day 1 of the next month
+    // Ensure data has exactly 42 entries, filling with next month days as needed
+    let start = 1;
     while (data.length < 42) {
         const date = new Date(year, month + 1, start);
         const dayOfWeek = getDayOfWeek(date);
-        data.push({
-            timeStamp: date,
 
-            day: dayOfWeek,
-            date: date.getDate(),
-            month: date.getMonth() + 1,
-            year: date.getFullYear()
-        });
-        console.log(start, 'date last'); // Log the current day for debugging
-        start++; // Increment once at the end of each iteration
+        // Again check for duplicates
+        if (!data.some(d => d.date === date.getDate() && d.month === date.getMonth() + 1 && d.year === date.getFullYear())) {
+            data.push({
+                timeStamp: date,
+                day: dayOfWeek,
+                date: date.getDate(),
+                month: date.getMonth() + 1,
+                year: date.getFullYear()
+            });
+        }
+        start++;
     }
 
-
-    console.log(data, 'Final Data');
     return data;
 }
 
-    function displayCalendar(month, year) {
-    const calendarDiv = document.getElementById('calendar');
+function displayCalendar(month, year) {
+
+    const calendarDiv = document.querySelector(`#calendar-${month}`);
+    if (!calendarDiv) return
+    calendarDiv.setAttribute('month', month)
     const days = processDays(y);
-    console.log(days, 'ppppppp')
-    calendarDiv.innerHTML = ''; // Clear previous content
+    calendarDiv.innerHTML = '';
     days.forEach(day => {
         const dayElement = document.createElement('div');
         dayElement.textContent = day.date;
@@ -407,17 +337,26 @@ function processDays(year) {
         dayElement.setAttribute('date-val', formattedDate)
         dayElement.className = 'day'; // Add a class for styling
         calendarDiv.appendChild(dayElement);
+
+        const toastElement = document.getElementById('calendarToast');
+        const toastBootstrap = new bootstrap.Toast(toastElement);
+
         dayElement.addEventListener('click', (e) => {
-            alert(`you clicked ${e.target.getAttribute('date-val')}`)
-        })
+            // Update the toast body with the clicked date
+            const selectedDate = e.target.getAttribute('date-val');
+            document.querySelector('#calendarToast .toast-body').textContent = `You clicked on ${selectedDate}`;
+
+            // Show the toast
+            toastBootstrap.show();
+        });
+
     });
 
 }
-displayCalendar(mm, y);
 
-    </script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
