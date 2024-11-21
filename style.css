@@ -1,3 +1,11 @@
+/*
+Theme Name: My Custom Theme
+Theme URI: http://example.com/my-custom-theme
+Author: Your Name
+Author URI: http://example.com
+Description: A brief description of your custom theme.
+Version: 1.0
+*/
 
 /* body {
     font-family: Arial, sans-serif;
@@ -30,6 +38,11 @@ h1 {
     width: 40%;
 }
 
+.carousel-control-prev,.carousel-control-next {
+    height: fit-content;
+    top: 50%;
+}
+
 @media (max-width: 768px) {
     video {
         width: 100vw; 
@@ -40,7 +53,7 @@ h1 {
     }
 
     .carousel-control-next, .carousel-control-prev {
-        top: 60%;
+        top: 80%;
     }
     .carousel-control-next {
         right: 30%;
@@ -66,8 +79,42 @@ h1 {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
     pointer-events: none;
-    opacity: 0; 
+    /* opacity: 0;  */
 }
+
+.choose-activity {
+    position: absolute;
+}
+
+.act {
+    position: absolute;
+    width: 10%;
+    left: 0;
+}
+
+.activities {
+    width: 100%;
+    gap: 10%;
+}
+
+.test {
+    background-image: url('./assets/act-cont.png');
+    background-size: cover; /* Cover the entire element */
+    background-repeat: no-repeat;
+}
+
+.choosedAct {
+    width: 25%;
+    top: 0;
+    right: 0;
+}
+
+.act-cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%, -100%);
+} 
 
 #calendarToast {
     position: absolute;
@@ -85,6 +132,8 @@ h1 {
     transition: background 0.3s, border 0.3s;
     pointer-events: auto; 
     /* opacity: 0; */
+    background-color: transparent;
+    position: relative;
 }
 
 .day:hover {
